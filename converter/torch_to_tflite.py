@@ -7,6 +7,9 @@ from PIL import Image
 from torchvision import transforms
 from onnx_tf.backend import prepare
 
+import sys
+# sys.path.insert(0, './x')
+# sys.path.insert(0, './converter')
 
 # ------------------ Image IO ------------------ #
 def get_example_input(image_file):
@@ -84,7 +87,11 @@ def get_torch_model(model_path):
     :param model_path: State-dict path to load PyTorch model with pre-trained weights
     :return: PyTorch model instance
     """
+    # print(model_path)
+    # exit()
+    model_path = "./yolov5s.pt"
     model = torch.load(model_path, map_location='cpu')
+    print(";;;;")
     return model
 
 
@@ -147,18 +154,21 @@ def convert(torch_model_path, tf_lite_model_path, image_path):
     ONNX_PATH = "./converter/onnx_model.onnx"
     TF_PATH = "./converter/tf_model"
 
-    try:
-        torch_to_onnx(torch_path=torch_model_path, onnx_path=ONNX_PATH, image_path=image_path)
-        print('\n\nTorch to ONNX converted!\n\n')
-    except:
-        pass
+   
+    torch_to_onnx(torch_path=torch_model_path, onnx_path=ONNX_PATH, image_path=image_path)
+    print('\n\nTorch to ONNX converted!\n\n')
+    
+    print("torch to onnx done")
+    
     try:
         onnx_to_tf(onnx_path=ONNX_PATH, tf_path=TF_PATH)
         print('\n\nONNX to TF converted!\n\n')
     except:
+        print("onnx to tf done")
         pass
     try:
         tf_to_tf_lite(tf_path=TF_PATH, tf_lite_path=tf_lite_model_path)
         print('\n\nTF to TFLite converted!\n\n')
     except:
+        print("tf to tflite done")
         pass

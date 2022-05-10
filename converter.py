@@ -1,6 +1,9 @@
 import argparse
 from converter.torch_to_tflite import *
 
+import sys
+# sys.path.insert(0, './x')
+sys.path.insert(0, './torch2tflite')
 
 def init_models(torch_model_path, tf_lite_model_path):
     """
