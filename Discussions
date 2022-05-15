@@ -1,0 +1,67 @@
+https://trello.com/b/agoSwQuk/intelexica-ec2-ai-collaboration
+###################################################
+
+MVP (Minimum vibal product)
+
+Desktop, Mobile base solution
+local based server solution
+
+Hardware
+
+
+Lamda function
+Sage Maker
+
+
+
+1, Model apply on cloud (face detection) with lambda function (zip upload<haarcascade>)
+
+2, Sage maker (expensive)
+
+####################################################
+weights real time match
+dlib
+EC2
+api gateway >> ec2 
+no lambda function
+
+respose time faster
+
+-------------------
+bluetooth bracelet >> embeded face
+
+--------------------------------
+Live video face capture , yolov5 tflite , frame process
+haarcascades face detect
+cut face , 5 frame capture
+image upload
+10 Images uploaded hein
+
+face_compare... rekognition
+
+-----------------------------------
+s3 access
+
+adnan.jpg , test.jpg closest
+name return json format
+
+-----------------------------------
+dlib api, cmake
+https://github.com/ageitgey/face_recognition
+https://github.com/ageitgey/face_recognition/issues/175#issue-257710508
+https://github.com/ageitgey/face_recognition/blob/master/examples/facerec_from_webcam_faster.py
+
+facelandmarks = 368
+
+hog, svm
+-----------------------------------
+FUTURE
+
+10 images upload
+
+Saudi Id detect, Riyad visit NIC, Pic upload .. time visit, Camera detect face, 10 se match return.
+
+Android/IOS
+
+
+
